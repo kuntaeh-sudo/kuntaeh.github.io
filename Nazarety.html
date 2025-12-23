@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cumple de Nazaret</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" type="image/png" href="imagenes/iconito.png">
+</head>
+<body>
+
+  <section class="banner">
+    <img src="imagenes/felizcito.png" alt="Felizcito" onclick="document.querySelector('.message').scrollIntoView({behavior: 'smooth'});">
+  </section>
+
+  <hr style="border: none; height: 1px; background: hotpink; margin: 0;">
+
+  <section class="message">
+    <div class="container">
+      <img src="imagenes/collage.png" alt="Collage">
+    </div>
+  </section>
+
+  <hr style="border: none; height: 1px; background: hotpink; margin: 0;">
+
+  <section class="poema">
+    <video controls autoplay muted loop>
+      <source src="imagenes/gatitos.mp4" type="video/mp4">
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </section>
+
+  <audio id="music" src="imagenes/music.mp3" loop></audio>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('poema')) {
+            document.getElementById('music').play();
+          }
+        }
+      });
+    });
+    observer.observe(document.querySelector('.message .container'));
+    observer.observe(document.querySelector('.poema'));
+  </script>
+
+</body>
+</html>

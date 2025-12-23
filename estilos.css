@@ -1,0 +1,81 @@
+
+body {
+  margin: 0;
+  font-family: serif;
+}
+
+.banner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../imagenes/primer.png");
+}
+
+.banner img {
+  width: 600px;
+  height: auto;
+  animation: fadeIn 2s ease-in;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.message {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../imagenes/segundo.png");
+}
+
+.message .container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.message .container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.message .container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.poema {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../imagenes/tercer.png");
+}
+
+.poema video {
+  width: 90%;
+  height: auto;
+}
